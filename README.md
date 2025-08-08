@@ -36,20 +36,33 @@ DELETE 	 /users/<id>	  Delete user by ID
 curl http://127.0.0.1:5000/users
 
 ➕ Add a new user
+Invoke-RestMethod -Uri "http://127.0.0.1:5000/users" `
+  -Method POST `
+  -Body '{"name":"Rani","email":"rani@example.com"}' `
+  -ContentType "application/json"
+OR
 curl -X POST http://127.0.0.1:5000/users \
 -H "Content-Type: application/json" \
--d "{\"name\":\"Rukkaiya\",\"email\":\"rukkaiya@example.com\"}"
+-d "{\"name\":\"Rani\",\"email\":\"rani@example.com\"}"
 
 🔍 Get user by ID
 curl http://127.0.0.1:5000/users/1
 
 ✏️ Update user by ID
-curl -X PUT http://127.0.0.1:5000/users/1 \
--H "Content-Type: application/json" \
--d "{\"name\":\"Updated Name\"}"
+Invoke-RestMethod -Uri "http://127.0.0.1:5000/users/1" `
+  -Method PUT `
+  -Body '{"name":"Updated Name"}' `
+  -ContentType "application/json"
+  OR
+  curl -X PUT http://127.0.0.1:5000/users/1 \
+  -H "Content-Type: application/json" \
+  -d "{\"name\":\"Updated Name\"}"
 
 ❌ Delete user by ID
+Invoke-RestMethod -Uri "http://127.0.0.1:5000/users/1" -Method DELETE
+or
 curl -X DELETE http://127.0.0.1:5000/users/1
+
 
 📁 Folder Structure
 .
