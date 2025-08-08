@@ -60,7 +60,7 @@ Invoke-RestMethod -Uri "http://127.0.0.1:5000/users/1" `
 
 ❌ Delete user by ID
 Invoke-RestMethod -Uri "http://127.0.0.1:5000/users/1" -Method DELETE
-or
+OR
 curl -X DELETE http://127.0.0.1:5000/users/1
 
 
